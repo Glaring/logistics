@@ -1,0 +1,5 @@
+com\platinum\service\GpsInfoService.class
+com\platinum\controller\GpsInfoController.class
+com\platinum\service\impl\GpsInfoServiceImpl.class
+com\platinum\dao\GpsInfoMapper.class
+com\platinum\pojo\GpsInfoPojo.class
