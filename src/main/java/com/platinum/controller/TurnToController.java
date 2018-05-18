@@ -12,7 +12,7 @@ public class TurnToController {
 		return "superIndex";
 	}
 
-	// 跳转到WEB-INF/jsp/superIndex.jsp页面
+	// 跳转到WEB-INF/jsp/normalIndex.jsp页面
 	@RequestMapping("normalIndex")
 	public String turnToNormalIndex() {
 		return "normalIndex";

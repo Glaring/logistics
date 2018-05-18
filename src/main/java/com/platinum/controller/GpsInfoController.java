@@ -58,7 +58,6 @@ public class GpsInfoController {
 			String[] a = str.split(",");
 			gpsInfoPojo.setLongitude(Float.parseFloat(a[0]));
 			gpsInfoPojo.setLatitude(Float.parseFloat(a[1]));
-			gpsInfoPojo.setCarId(0);
 			gpsInfoServiceImpl.insertGpsInfo(gpsInfoPojo);
 		}
 		return "";

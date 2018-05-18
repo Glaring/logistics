@@ -3,7 +3,7 @@
 <mapper namespace="com.platinum.dao.GpsInfoMapper">
 
 	<insert id="insertGpsInfo" parameterType="com.platinum.pojo.GpsInfoPojo">
-		insert into GpsInfo#{carId}
+		insert into gpsinfo
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="id != null">
 				id,

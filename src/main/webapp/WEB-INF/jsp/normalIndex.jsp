@@ -183,13 +183,9 @@ $(function() {
         }
     })
 
-    //判断是否为第一页，为第一页,关闭上一页按钮
+    //判断是否为第一页，为第一页关闭上一页按钮
     if (pages === 1) {
         $(".previous").addClass("disabled");
-    }
-    //判断是否只有一页，是，则关闭下一页按钮
-    if (totalPages === 1) {
-        $(".next").addClass("disabled");
     }
 });
 //添加用户
