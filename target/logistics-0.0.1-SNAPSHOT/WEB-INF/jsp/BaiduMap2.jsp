@@ -35,80 +35,93 @@
     <![endif]-->
 <style>
 #allmap {
-	height: 640px;
+	height: 600px;
 }
 </style>
 
 </head>
 
 <body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Project name</a>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a></a></li>
+                    <li><a>欢迎&nbsp;&nbsp;&nbsp;&nbsp;${user.username}</a></li>
+                    <li><a></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">管理员信息</a></li>
+                    <li><a href="#">司机信息</a></li>
+                    <li><a href="#">车辆信息</a></li>
+                </ul>
+            </div>
+            <div id="allmap" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a></a></li>
-					<li><a>欢迎&nbsp;&nbsp;&nbsp;&nbsp;${user.u_name }</a></li>
-					<li><a></a></li>
-				</ul>
-				<!-- 搜索快递车功能  -->
-				<!-- <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form> -->
-			</div>
-		</div>
-	</nav>
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-					<li><a href="#">Reports</a></li>
-					<li><a href="#">Analytics</a></li>
-					<li><a href="#">Export</a></li>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="">Nav item</a></li>
-					<li><a href="">Nav item again</a></li>
-					<li><a href="">One more nav</a></li>
-					<li><a href="">Another nav item</a></li>
-					<li><a href="">More navigation</a></li>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="">Nav item again</a></li>
-					<li><a href="">One more nav</a></li>
-					<li><a href="">Another nav item</a></li>
-				</ul>
-			</div>
-			<div id="allmap"
-				class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-
-
-
-			</div>
-		</div>
-	</div>
-
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="insertAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">添加管理员</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputUsername" class="col-sm-2 control-label">用户名：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputUsername" placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-sm-2 control-label">密码：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword" placeholder="请输入密码" name="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">权限：</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input type="radio" name="identity" id="inlineRadio2" value="1" checked="checked"> 超级管理员
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="identity" id="inlineRadio3" value="2"> 普通管理员
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="insertUser">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 	<script>
-		window.jQuery
-				|| document
-						.write('<script src="./js/vendor/jquery.min.js"><\/script>')
+		window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')
 	</script>
 	<script
 		src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -123,18 +136,26 @@
 		map.addControl(new BMap.OverviewMapControl({
 			isOpen : true
 		})); //添加缩略地图控件  
-
+		
 	</script>
 	<script type="text/javascript">
+	
 
 	var gps_longitude = new Array();
 	var gps_latitude = new Array();
+	
 	function getData(){
-		<c:forEach items="${gpsList}" var="item" varStatus="status" >  
-			gps_longitude.push("${item.gps_longitude}");  
-			gps_latitude.push("${item.gps_latitude}");  
-
-    	</c:forEach>  
+		$.ajax({
+	        url: "getAllGps",
+	        type: "post",
+	        dataType: "json",
+	        success: function(result) {
+	        	$.each(result, function(i, val) {
+	        		gps_longitude.push(val.longitude);
+	        		gps_latitude.push(val.latitude);
+	            })
+	        }
+	    })
 	}	
 
 	function addMapOverlay(){  

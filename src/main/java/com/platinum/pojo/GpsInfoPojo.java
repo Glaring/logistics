@@ -1,5 +1,7 @@
 package com.platinum.pojo;
 
+import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +17,5 @@ public class GpsInfoPojo {
 	private Integer id;
 	private Float longitude;
 	private Float latitude;
-	private int carId;
+	private Date time;
 }

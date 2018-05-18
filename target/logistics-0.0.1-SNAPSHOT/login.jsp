@@ -33,20 +33,23 @@ $(function() {
 				if (userName.length != 0 && userName != null
 						&& userPass.length != 0 && userPass != null) {
 					$.ajax({
-						url : "loginUser",
+						url : "login",
 						type : "post",
 						data : {
-							u_name : userName,
-							u_password : userPass
+							username : userName,
+							password : userPass
 						},
 						dataType : "text",
 						success : function(result) {
-							result = $.trim(eval("(" + result + ")"));
-							if (result == "false") {
+							console.log(result);
+							if (result === "failed") {
 								alert("密码或用户名输入错误!");
-							} else {
-								window.location.href = "BaiduMap2";
-
+							} else if(result === "superAdmin"){
+								window.location.href = "superIndex";
+							} else if(result === "normalAdmin"){
+								window.location.href = "index";
+							} else{
+								alert("未知错误！");
 							}
 						}
 					})
@@ -73,12 +76,11 @@ $(function() {
 <body>
 
 	<div class="container">
-
 		<form class="form-signin">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			<label for="inputUsername" class="sr-only">Username</label> 
+			<h2 class="form-signin-heading">登陆</h2>
+			<label for="inputUsername" class="sr-only">用户名：</label> 
 			<input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus> 
-			<label for="inputPassword" class="sr-only">Password</label> 
+			<label for="inputPassword" class="sr-only">密码：</label> 
 			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 			<!-- 记住用户和密码  -->
 			<!-- <div class="checkbox">
@@ -87,7 +89,7 @@ $(function() {
           </label>
         </div> -->
 			<button class="btn btn-lg btn-primary btn-block" type="button"
-				name="btn">Sign in</button>
+				name="btn">登陆</button>
 		</form>
 
 	</div>

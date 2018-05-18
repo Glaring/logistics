@@ -1,5 +1,12 @@
 com\platinum\service\GpsInfoService.class
 com\platinum\controller\GpsInfoController.class
+com\platinum\pojo\Pages.class
+com\platinum\controller\UsersController.class
+com\platinum\service\UsersService.class
+com\platinum\dao\UsersMapper.class
 com\platinum\service\impl\GpsInfoServiceImpl.class
 com\platinum\dao\GpsInfoMapper.class
+com\platinum\pojo\UsersPojo.class
+com\platinum\service\impl\UsersServiceImpl.class
+com\platinum\controller\TurnToController.class
 com\platinum\pojo\GpsInfoPojo.class
